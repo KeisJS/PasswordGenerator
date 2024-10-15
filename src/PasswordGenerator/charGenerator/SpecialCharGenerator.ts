@@ -2,13 +2,13 @@ import type { ICharGenerator } from './types.ts'
 import { genRandom } from '../genRandomUtils.ts'
 
 class SpecialCharGenerator implements ICharGenerator {
-  private _template = '!#$%&*+./:;=><?@\\^`|~\''
+  private templateString = '!#$%&*+./:;=><?@\\^`|~\''
   genChar() {
-    return this.template[genRandom(0, this.template.length)]
+    return this.template[genRandom(0, this.templateString.length)]
   }
 
   get template() {
-    return this._template
+    return this.templateString
   }
 }
 
