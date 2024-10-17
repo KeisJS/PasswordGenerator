@@ -1,5 +1,6 @@
 import { memo } from 'react'
 import styles from './index.module.css'
+import FilterCheckbox from './FilterCheckbox'
 
 const PasswordGenerator = () => {
   return (
@@ -19,25 +20,13 @@ const PasswordGenerator = () => {
       </div>
       <div className={ styles.filters }>
         <div className={ styles.filters__filter }>
-          <label>
-            <input type="checkbox" checked={ true } name="1"/>
-            <span>Строчные буквы</span>
-            <span>abvffdssskldkfjsdlfjdslfjsdlkfjsdslgjlsdrgjk</span>
-          </label>
-        </div>
-        <div className={ styles.filters__filter }>
-          <label>
-            <input type="checkbox" checked={ false } name="2"/>
-            <span>Заглавные буквы</span>
-            <span>abvffdssskldkfjsdlfjdslfjsdlkfjsdslgjlsdrgjk</span>
-          </label>
-        </div>
-        <div className={ styles.filters__filter }>
-          <label>
-            <input type="checkbox" checked={ false } name="3"/>
-            <span>Цифры</span>
-            <span>0123456789</span>
-          </label>
+          <FilterCheckbox
+            name="4"
+            isChecked={ true }
+            onChange={ (e) => console.log(e) }
+            description="Цифры"
+            templateString="0123456789"
+          />
         </div>
       </div>
     </div>
