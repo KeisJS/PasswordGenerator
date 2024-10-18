@@ -1,6 +1,7 @@
 .description,
 .templateString {
   font-family: sans-serif;
+  user-select: none;
 }
 
 .description {
@@ -9,6 +10,6 @@
 }
 
 .templateString {
-  font-size: 14px;
   text-overflow: ellipsis;
+  font: 14px var(--specialFont)
 }

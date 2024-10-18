@@ -1,4 +1,4 @@
-import { ICharGenerator } from '../charGenerator/types.ts'
+import { AbstractCharGenerator } from '../charGenerator/types.ts'
 import { genRandom } from '../genRandomUtils.ts'
 
 type charPosition = {
@@ -6,14 +6,14 @@ type charPosition = {
   char: string
 }
 
-const passwordGenerator = (length: number, generators: ICharGenerator[]): string => {
+const passwordGenerator = (length: number, generators: AbstractCharGenerator[]): string => {
   const positions: charPosition[] = Array(length)
     .fill('')
     .map((v, i) => ({ index: i, char: v }))
 
   const result: charPosition[] = []
 
-  for (let generator of generators) {
+  for (const generator of generators) {
     const charPosition = positions.splice(genRandom(0, positions.length - 1), 1)[0]
 
     charPosition.char = generator.genChar()

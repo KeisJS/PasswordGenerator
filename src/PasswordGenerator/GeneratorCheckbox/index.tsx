@@ -3,12 +3,12 @@ import Checkbox from '../../UI/Checkbox'
 import { ICheckboxProps } from '../../UI/Checkbox/types.ts'
 import styles from './styles.module.css'
 
-type IFilterCheckboxProps = ICheckboxProps & {
+type IGeneratorCheckboxProps = ICheckboxProps & {
   description: string
   templateString: string
 }
 
-const FilterCheckbox = (props: IFilterCheckboxProps) => {
+const GeneratorCheckbox = (props: IGeneratorCheckboxProps) => {
   const {
     description,
     templateString,
@@ -29,5 +29,5 @@ const FilterCheckbox = (props: IFilterCheckboxProps) => {
   )
 }
 
-export default memo(FilterCheckbox)
+export default memo(GeneratorCheckbox)
 

@@ -1,10 +1,11 @@
 .mainContainer {
   margin: 20px auto;
   container-type: size;
+  --specialFont: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 .resultPassword {
-  font: 24px sans-serif;
+  font: 24px var(--specialFont);
   text-align: center;
 }
 

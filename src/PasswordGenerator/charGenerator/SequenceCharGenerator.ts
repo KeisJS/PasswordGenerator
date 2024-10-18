@@ -1,7 +1,7 @@
-import type { ICharGenerator } from './types.ts'
+import  { AbstractCharGenerator } from './types.ts'
 import { genRandom } from '../genRandomUtils.ts'
 
-abstract class SequenceCharGenerator implements ICharGenerator {
+abstract class SequenceCharGenerator extends AbstractCharGenerator {
   protected min = 0
   protected max = 0
   genChar() {
