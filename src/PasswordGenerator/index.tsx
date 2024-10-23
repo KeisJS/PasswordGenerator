@@ -4,12 +4,20 @@ import RefreshPassword from './RefreshPassword'
 import { usePasswordGeneratorContext } from './context/contexts.ts'
 import PasswordLength from './PasswordLength'
 import PasswordGeneratorCheckboxList from './PasswordGeneratorCheckboxList'
+import ClipboardButton from '../Clipboard/ClipboardButton.tsx'
 
 const GeneratorCheckboxWrapper = (props: PropsWithChildren) => (
   <div className={ styles.filters__filter}>
     { props.children }
   </div>
 )
+
+const ButtonWrapper = (props: PropsWithChildren) => (
+  <div className={ styles.buttons__button }>
+    { props.children }
+  </div>
+)
+
 const PasswordGenerator = () => {
   const {
     password
@@ -24,11 +32,12 @@ const PasswordGenerator = () => {
         <div className={ styles.buttons__button }>
           <RefreshPassword />
         </div>
-        <div className={ styles.buttons__button }>
-          <button type="button" disabled={ true }>
-            Скопировать пароль
-          </button>
-        </div>
+        <ClipboardButton
+          text={ password }
+          isDisabled={ !password }
+          Wrapper={ ButtonWrapper }
+          description="Скопировать пароль"
+        />
       </div>
       <div className={ styles.filters }>
         <div className={ styles.filters__filter }>
