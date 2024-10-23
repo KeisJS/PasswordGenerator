@@ -3,14 +3,6 @@ interface IGeneratorState {
   templateString: string
 }
 
-interface IPasswordGeneratorState {
-  password: string
-  refreshPasswordHandler: () => void
-  generators: IGeneratorState[]
-  generatorToggleHandler: (generatorId: number) => void
-  activeGenerators: number[]
-}
-
 interface IGeneratorDefaultSettings {
   enabled: {
     numbers?: boolean
@@ -22,7 +14,6 @@ interface IGeneratorDefaultSettings {
 }
 
 export type {
-  IPasswordGeneratorState,
   IGeneratorState,
   IGeneratorDefaultSettings
 }
