@@ -1,9 +1,9 @@
 import { useCallback, useState } from 'react'
 
 interface IClipboardState {
-  isSuccess: boolean
-  isError: boolean,
-  error: string
+  isClipboardCopySuccess: boolean
+  isClipboardCopyError: boolean,
+  clipboardCopyError: string
 }
 
 interface IUseClipboard extends IClipboardState {
@@ -11,10 +11,10 @@ interface IUseClipboard extends IClipboardState {
   writeText: (text: string) => void
 }
 
-const getDefaultState = (() => ({
-  isSuccess: false,
-  isError: false,
-  error: '',
+const getDefaultState = ((): IClipboardState => ({
+  isClipboardCopySuccess: false,
+  isClipboardCopyError: false,
+  clipboardCopyError: '',
 }))
 const useClipboard = (): IUseClipboard => {
   const [clipboardState, setClipboardState] = useState<IClipboardState>(getDefaultState)
@@ -27,14 +27,14 @@ const useClipboard = (): IUseClipboard => {
       .then(() => {
         setClipboardState(state => ({
           ...state,
-          isSuccess: true
+          isClipboardCopySuccess: true
         }))
       })
       .catch((error) => {
         setClipboardState(state => ({
           ...state,
-          isError: true,
-          error: 'message' in error ? error.message : 'unknown error'
+          isClipboardCopyError: true,
+          clipboardCopyError: 'message' in error ? error.message : 'unknown error'
         }))
       })
   }, [])

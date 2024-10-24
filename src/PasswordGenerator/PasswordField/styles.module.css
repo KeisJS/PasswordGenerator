@@ -1,0 +1,32 @@
+.main {
+  min-height: 1.3em;
+  font: 24px var(--specialFont);
+  text-align: center;
+  user-select: none;
+  cursor: pointer;
+}
+
+.value {
+  display: inline-block;
+}
+
+.value.value_enabledCopy {
+  border-bottom: 2px dotted black;
+  position: relative;
+}
+
+.copySuccess {
+  position: absolute;
+  opacity: 0;
+  font-size: 0.5em;
+  transform: translate(10px, 0);
+  transition: opacity 0.8s ease-in-out;
+  color: green;
+  border: 1px solid green;
+  border-radius: 0.25em;
+  padding: 0.30em;
+}
+
+.copySuccess.copySuccess_on {
+  opacity: 1;
+}

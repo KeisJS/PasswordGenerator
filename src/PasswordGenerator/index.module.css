@@ -4,11 +4,6 @@
   --specialFont: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
-.resultPassword {
-  font: 24px var(--specialFont);
-  text-align: center;
-}
-
 .buttons {
   display: flex;
   justify-content: center;

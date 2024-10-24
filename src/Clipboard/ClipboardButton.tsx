@@ -21,9 +21,9 @@ const ClipboardButton = (props: IClipboardButtonProps) => {
 
   const {
     isClipboardEnabled,
-    isError,
-    error,
-    isSuccess,
+    isClipboardCopyError,
+    clipboardCopyError,
+    isClipboardCopySuccess,
     writeText
   } = useClipboard()
 
@@ -32,12 +32,12 @@ const ClipboardButton = (props: IClipboardButtonProps) => {
   }, [text, writeText])
 
   useEffect(() => {
-    if (isError && onError) {
-      onError(error)
-    } else if (isSuccess && onSuccess) {
+    if (isClipboardCopyError && onError) {
+      onError(clipboardCopyError)
+    } else if (isClipboardCopySuccess && onSuccess) {
       onSuccess()
     }
-  }, [isError, error, isSuccess, onSuccess, onError])
+  }, [onSuccess, onError, isClipboardCopyError, isClipboardCopySuccess, clipboardCopyError])
 
   if (!isClipboardEnabled) {
     return null
