@@ -2,6 +2,7 @@ import { usePasswordGeneratorContext } from '../PasswordGeneratorProvider/contex
 import { charGenerators } from '../charGenerator/charGenerators.ts'
 import { passwordGenerator } from '../passwordGenerator'
 import { useCallback, memo } from 'react'
+import Button from '../../UI/Button'
 
 const RefreshPasswordButton = () => {
   const {
@@ -21,9 +22,10 @@ const RefreshPasswordButton = () => {
   }, [activeGenerators, length, setPassword])
 
   return (
-    <button type="button" onClick={ refreshPasswordHandler }>
-      Создать пароль
-    </button>
+    <Button
+      description="Создать пароль"
+      onClick={ refreshPasswordHandler }
+    />
   )
 }
 
