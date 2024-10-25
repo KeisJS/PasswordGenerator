@@ -1,6 +1,6 @@
 import { memo, PropsWithChildren } from 'react'
 import styles from './index.module.css'
-import RefreshPassword from './RefreshPassword'
+import RefreshPasswordButton from './RefreshPasswordButton'
 import PasswordLength from './PasswordLength'
 import PasswordGeneratorCheckboxList from './PasswordGeneratorCheckboxList'
 import PasswordField from './PasswordField'
@@ -17,7 +17,7 @@ const PasswordGenerator = () => {
       <PasswordField />
       <div className={ styles.buttons }>
         <div className={ styles.buttons__button }>
-          <RefreshPassword />
+          <RefreshPasswordButton />
         </div>
       </div>
       <div className={ styles.filters }>

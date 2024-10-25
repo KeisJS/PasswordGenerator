@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import InputRange from '../../UI/InputRange'
-import { usePasswordGeneratorContext } from '../context/contexts.ts'
+import { usePasswordGeneratorContext } from '../PasswordGeneratorProvider/contexts.ts'
 
 const PasswordLength = () => {
   const {

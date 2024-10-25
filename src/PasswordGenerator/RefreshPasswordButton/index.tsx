@@ -1,9 +1,9 @@
-import { usePasswordGeneratorContext } from '../context/contexts.ts'
+import { usePasswordGeneratorContext } from '../PasswordGeneratorProvider/contexts.ts'
 import { charGenerators } from '../charGenerator/charGenerators.ts'
 import { passwordGenerator } from '../passwordGenerator'
 import { useCallback, memo } from 'react'
 
-const RefreshPassword = () => {
+const RefreshPasswordButton = () => {
   const {
     length,
     activeGenerators,
@@ -27,4 +27,4 @@ const RefreshPassword = () => {
   )
 }
 
-export default memo(RefreshPassword)
+export default memo(RefreshPasswordButton)

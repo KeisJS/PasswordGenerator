@@ -1,6 +1,6 @@
 import { memo, useCallback, useEffect, useState } from 'react'
 import styles from './styles.module.css'
-import { usePasswordGeneratorContext } from '../context/contexts.ts'
+import { usePasswordGeneratorContext } from '../PasswordGeneratorProvider/contexts.ts'
 import useClipboard from '../../Clipboard/useClipboard.ts'
 
 const PasswordField = () => {

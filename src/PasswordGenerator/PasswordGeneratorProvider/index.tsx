@@ -1,9 +1,9 @@
-import { PropsWithChildren, useState, memo, useCallback } from 'react'
-import { usePasswordLength } from '../hooks/usePasswordLength.ts'
+import { PropsWithChildren, useState, memo, useCallback, useEffect } from 'react'
 import { CharGeneratorEnabledSettings } from '../charGenerator/CharGeneratorEnabledSettings.ts'
 import { charGenerators } from '../charGenerator/charGenerators.ts'
 import { IGeneratorDefaultSettings } from '../type.ts'
-import { PasswordGeneratorContext } from '../context/contexts.ts'
+import { PasswordGeneratorContext } from './contexts.ts'
+import { defaultGeneratorsSettings } from '../settings.ts'
 
 interface IPasswordGeneratorProviderSettingsProps {
   settings: IGeneratorDefaultSettings
@@ -20,7 +20,14 @@ const PasswordGeneratorProvider = ({ children, settings }: PropsWithChildren<IPa
       return enabledSettings.isEnabled ? id : null
     }).filter(id => id !== null)
   })
-  const { length, setLength } = usePasswordLength(activeGenerators.length)
+
+  const [length, setLength] = useState(defaultGeneratorsSettings.length)
+
+  useEffect(() => {
+    if (activeGenerators.length > length) {
+      setLength(activeGenerators.length)
+    }
+  }, [activeGenerators, setLength, length])
 
   const activeGeneratorToggle = useCallback((id: number) => {
     setActiveGenerators(state => {
