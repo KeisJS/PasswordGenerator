@@ -1,7 +1,9 @@
 .mainContainer {
   margin: 20px auto;
   container-type: size;
+  min-height: 475px;
   --specialFont: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  color: black !important;
 }
 
 .buttons {

@@ -34,7 +34,7 @@ const InputRange = (props: IInputRangeProps) => {
           max={ max }
           value={ value }
           onChange={ onChangeHandler }
-
+          className={ styles.inputRange }
         />
       </span>
     </label>

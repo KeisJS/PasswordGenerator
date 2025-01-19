@@ -18,3 +18,15 @@
   width: 1em;
   overflow: visible;
 }
+
+.inputRange {
+  appearance: auto !important;
+  padding: 0 !important;
+  width: 50cqw !important;
+}
+
+@container (width > 768px) {
+  .inputRange {
+    width: 25cqw !important;
+  }
+}
