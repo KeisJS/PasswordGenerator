@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { genRandom } from './genRandomUtils.ts'
+import { generateRandomRange } from './generateRandomRange.ts'
 describe('Test getRandom()', () => {
   const testData = [
     [0, 4],
@@ -8,7 +8,7 @@ describe('Test getRandom()', () => {
   ]
 
   it.each(testData)('%s - %s', (min, max) => {
-    const result = genRandom(min, max)
+    const result = generateRandomRange(min, max)
 
     expect(result).toBeGreaterThanOrEqual(min)
     expect(result).toBeLessThanOrEqual(max)

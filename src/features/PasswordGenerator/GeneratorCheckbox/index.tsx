@@ -1,7 +1,7 @@
 import { memo } from 'react'
-import Checkbox from '../../UI/Checkbox'
-import { ICheckboxProps } from '../../UI/Checkbox/types.ts'
 import styles from './styles.module.css'
+import { ICheckboxProps } from '@/UI/Checkbox/types.ts'
+import Checkbox from '@/UI/Checkbox'
 
 type IGeneratorCheckboxProps = ICheckboxProps & {
   description: string

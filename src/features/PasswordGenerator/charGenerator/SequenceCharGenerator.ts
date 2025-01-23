@@ -1,11 +1,11 @@
 import  { AbstractCharGenerator } from './types.ts'
-import { genRandom } from '../genRandomUtils.ts'
+import { generateRandomRange } from '@/features/PasswordGenerator/generateRandomRange/generateRandomRange.ts'
 
 abstract class SequenceCharGenerator extends AbstractCharGenerator {
   protected min = 0
   protected max = 0
   genChar() {
-    return String.fromCharCode(genRandom(this.min, this.max))
+    return String.fromCharCode(generateRandomRange(this.min, this.max))
   }
 
   get template() {

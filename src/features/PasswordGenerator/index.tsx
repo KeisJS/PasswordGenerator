@@ -1,9 +1,9 @@
 import { memo, PropsWithChildren } from 'react'
 import styles from './index.module.css'
-import RefreshPasswordButton from '@/PasswordGenerator/RefreshPasswordButton'
-import PasswordField from '@/PasswordGenerator/PasswordField'
-import PasswordLength from '@/PasswordGenerator/PasswordLength'
-import PasswordGeneratorCheckboxList from '@/PasswordGenerator/PasswordGeneratorCheckboxList'
+import RefreshPasswordButton from '@/features/PasswordGenerator/RefreshPasswordButton'
+import PasswordField from '@/features/PasswordGenerator/PasswordField'
+import PasswordLength from '@/features/PasswordGenerator/PasswordLength'
+import PasswordGeneratorCheckboxList from '@/features/PasswordGenerator/PasswordGeneratorCheckboxList'
 
 const GeneratorCheckboxWrapper = (props: PropsWithChildren) => (
   <div className={ styles.filters__filter}>

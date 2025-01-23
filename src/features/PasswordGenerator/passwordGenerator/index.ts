@@ -1,5 +1,5 @@
-import { AbstractCharGenerator } from '../charGenerator/types.ts'
-import { genRandom } from '../genRandomUtils.ts'
+import { generateRandomRange } from '@/features/PasswordGenerator/generateRandomRange/generateRandomRange.ts'
+import { AbstractCharGenerator } from '@/features/PasswordGenerator/charGenerator/types.ts'
 
 type charPosition = {
   index: number,
@@ -14,7 +14,7 @@ const passwordGenerator = (length: number, generators: AbstractCharGenerator[]):
   const result: charPosition[] = []
 
   for (const generator of generators) {
-    const charPosition = positions.splice(genRandom(0, positions.length - 1), 1)[0]
+    const charPosition = positions.splice(generateRandomRange(0, positions.length - 1), 1)[0]
 
     charPosition.char = generator.genChar()
 
@@ -22,7 +22,7 @@ const passwordGenerator = (length: number, generators: AbstractCharGenerator[]):
   }
 
   while(positions.length) {
-    const generator = generators[genRandom(0, generators.length - 1)]
+    const generator = generators[generateRandomRange(0, generators.length - 1)]
     const charPosition = positions.pop() as charPosition
 
     charPosition.char = generator.genChar()

@@ -1,7 +1,7 @@
 import { useCallback, memo } from 'react'
-import { usePasswordGeneratorContext } from '@/PasswordGenerator/PasswordGeneratorProvider/contexts.ts'
-import { charGenerators } from '@/PasswordGenerator/charGenerator/charGenerators.ts'
-import { passwordGenerator } from '@/PasswordGenerator/passwordGenerator'
+import { usePasswordGeneratorContext } from '@/features/PasswordGenerator/PasswordGeneratorProvider/contexts.ts'
+import { charGenerators } from '@/features/PasswordGenerator/charGenerator/charGenerators.ts'
+import { passwordGenerator } from '@/features/PasswordGenerator/passwordGenerator'
 import Button from '@/UI/Button'
 
 const RefreshPasswordButton = () => {

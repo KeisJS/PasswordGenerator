@@ -1,5 +1,5 @@
-import useClipboard from './useClipboard.ts'
 import { FC, PropsWithChildren, useCallback, useEffect, memo } from 'react'
+import useClipboard from '@/features/Clipboard/useClipboard.ts'
 
 interface IClipboardButtonProps {
   onSuccess?: () => void

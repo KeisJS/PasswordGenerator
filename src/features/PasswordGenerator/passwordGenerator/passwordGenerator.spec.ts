@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
-import { lowCaseGenerator, upperCaseGenerator } from '../charGenerator/AbcGenerator.ts'
-import { numberGenerator } from '../charGenerator/NumberGenerator.ts'
 import { passwordGenerator } from './index.ts'
+import { lowCaseGenerator, upperCaseGenerator } from '@/features/PasswordGenerator/charGenerator/AbcGenerator.ts'
+import { numberGenerator } from '@/features/PasswordGenerator/charGenerator/NumberGenerator.ts'
 
 describe('Test password generator', () => {
   const testData: [number, string][] = Array(3)

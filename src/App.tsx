@@ -1,6 +1,6 @@
-import PasswordGenerator from './PasswordGenerator'
-import PasswordGeneratorProvider from './PasswordGenerator/PasswordGeneratorProvider'
-import { defaultGeneratorsSettings } from './PasswordGenerator/settings.ts'
+import PasswordGenerator from './features/PasswordGenerator'
+import PasswordGeneratorProvider from '@/features/PasswordGenerator/PasswordGeneratorProvider'
+import { defaultGeneratorsSettings } from '@/features/PasswordGenerator/settings.ts'
 
 function App() {
 
