@@ -1,23 +1,23 @@
 import { useCallback, useState } from 'react'
 
-interface IClipboardState {
+interface ClipboardState {
   isClipboardCopySuccess: boolean
   isClipboardCopyError: boolean,
   clipboardCopyError: string
 }
 
-interface IUseClipboard extends IClipboardState {
+interface ClipboardWrapper extends ClipboardState {
   isClipboardEnabled: boolean
   writeText: (text: string) => void
 }
 
-const getDefaultState = ((): IClipboardState => ({
+const getDefaultState = ((): ClipboardState => ({
   isClipboardCopySuccess: false,
   isClipboardCopyError: false,
   clipboardCopyError: '',
 }))
-const useClipboard = (): IUseClipboard => {
-  const [clipboardState, setClipboardState] = useState<IClipboardState>(getDefaultState)
+const useClipboard = (): ClipboardWrapper => {
+  const [clipboardState, setClipboardState] = useState<ClipboardState>(getDefaultState)
 
   const writeText = useCallback((text: string) => {
     setClipboardState(getDefaultState)

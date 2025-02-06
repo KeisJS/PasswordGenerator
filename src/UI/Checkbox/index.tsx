@@ -1,8 +1,8 @@
 import { PropsWithChildren, memo } from 'react'
 import styles from './styles.module.css'
-import { ICheckboxProps } from './types.ts'
+import { CheckboxProps } from './types.ts'
 
-const Checkbox = (props: PropsWithChildren<ICheckboxProps>) => {
+const Checkbox = (props: PropsWithChildren<CheckboxProps>) => {
   const {
     isChecked,
     children,

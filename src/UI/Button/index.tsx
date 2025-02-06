@@ -1,12 +1,12 @@
 import { memo } from 'react'
 import styles from './styles.module.css'
 
-interface IButtonProps {
+interface ButtonProps {
   onClick: () => void
   description: string
 }
 
-const Button = (props: IButtonProps) => {
+const Button = (props: ButtonProps) => {
   const { onClick, description } = props
 
   return (

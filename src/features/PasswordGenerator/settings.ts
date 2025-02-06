@@ -1,6 +1,6 @@
-import { IGeneratorDefaultSettings } from './type.ts'
+import { GeneratorDefaultSettings } from './type.ts'
 
-const defaultGeneratorsSettings: IGeneratorDefaultSettings = {
+const defaultGeneratorsSettings: GeneratorDefaultSettings = {
   enabled: {
     numbers: true,
     lowCase: true,

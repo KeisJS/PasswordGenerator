@@ -1,15 +1,15 @@
 import { memo, FC, PropsWithChildren, useCallback, ChangeEventHandler, useMemo } from 'react'
 import { charGenerators } from '@/features/PasswordGenerator/charGenerator/charGenerators.ts'
-import { IGeneratorState } from '@/features/PasswordGenerator/type.ts'
+import { GeneratorState } from '@/features/PasswordGenerator/type.ts'
 import { charGeneratorDescriptions } from '@/features/PasswordGenerator/charGenerator/CharGeneratorDescriptions.ts'
 import { usePasswordGeneratorContext } from '@/features/PasswordGenerator/PasswordGeneratorProvider/contexts.ts'
 import GeneratorCheckbox from '@/features/PasswordGenerator/GeneratorCheckbox'
 
-interface IPasswordGeneratorCheckboxListProps {
+interface PasswordGeneratorCheckboxListProps {
   Wrapper?: FC<PropsWithChildren>
 }
-const PasswordGeneratorCheckboxList = ({ Wrapper }: IPasswordGeneratorCheckboxListProps) => {
-  const generators = useMemo(() => charGenerators.map<IGeneratorState>((charGenerator) => {
+const PasswordGeneratorCheckboxList = ({ Wrapper }: PasswordGeneratorCheckboxListProps) => {
+  const generators = useMemo(() => charGenerators.map<GeneratorState>((charGenerator) => {
 
     charGenerator.accept(charGeneratorDescriptions)
 

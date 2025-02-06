@@ -1,5 +1,5 @@
 import { PropsWithChildren, useState, memo, useCallback, useEffect } from 'react'
-import { IGeneratorDefaultSettings } from '@/features/PasswordGenerator/type.ts'
+import { GeneratorDefaultSettings } from '@/features/PasswordGenerator/type.ts'
 import {
   CharGeneratorEnabledSettings
 } from '@/features/PasswordGenerator/charGenerator/CharGeneratorEnabledSettings.ts'
@@ -7,11 +7,11 @@ import { charGenerators } from '@/features/PasswordGenerator/charGenerator/charG
 import { defaultGeneratorsSettings } from '@/features/PasswordGenerator/settings.ts'
 import { PasswordGeneratorContext } from '@/features/PasswordGenerator/PasswordGeneratorProvider/contexts.ts'
 
-interface IPasswordGeneratorProviderSettingsProps {
-  settings: IGeneratorDefaultSettings
+interface PasswordGeneratorProviderSettingsProps {
+  settings: GeneratorDefaultSettings
 }
 
-const PasswordGeneratorProvider = ({ children, settings }: PropsWithChildren<IPasswordGeneratorProviderSettingsProps>) => {
+const PasswordGeneratorProvider = ({ children, settings }: PropsWithChildren<PasswordGeneratorProviderSettingsProps>) => {
   const [password, setPassword] = useState('')
   const [activeGenerators, setActiveGenerators] = useState<number[]>(() => {
     const enabledSettings = new CharGeneratorEnabledSettings(settings)

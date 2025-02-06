@@ -1,11 +1,11 @@
 import { AbstractCharGeneratorVisitor } from './types.ts'
-import { IGeneratorDefaultSettings } from '../type.ts'
+import { GeneratorDefaultSettings } from '../type.ts'
 
 class CharGeneratorEnabledSettings extends AbstractCharGeneratorVisitor {
-  public settings: IGeneratorDefaultSettings['enabled']
+  public settings: GeneratorDefaultSettings['enabled']
   public isEnabled: boolean = false
 
-  constructor(settings: IGeneratorDefaultSettings) {
+  constructor(settings: GeneratorDefaultSettings) {
     super()
     this.settings = settings.enabled
   }

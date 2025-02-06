@@ -1,9 +1,9 @@
-interface IGeneratorState {
+interface GeneratorState {
   description: string
   templateString: string
 }
 
-interface IGeneratorDefaultSettings {
+interface GeneratorDefaultSettings {
   enabled: {
     numbers?: boolean
     specialChars?: boolean
@@ -14,6 +14,6 @@ interface IGeneratorDefaultSettings {
 }
 
 export type {
-  IGeneratorState,
-  IGeneratorDefaultSettings
+  GeneratorState,
+  GeneratorDefaultSettings
 }

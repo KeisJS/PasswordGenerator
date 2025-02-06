@@ -1,6 +1,6 @@
 import { createContext, useContext } from 'react'
 
-interface IPasswordGeneratorState {
+interface PasswordGeneratorState {
   length: number
   password: string
   activeGenerators: number[]
@@ -9,7 +9,7 @@ interface IPasswordGeneratorState {
   setLength: (length: number) => void
 }
 
-const PasswordGeneratorContext = createContext<IPasswordGeneratorState>({
+const PasswordGeneratorContext = createContext<PasswordGeneratorState>({
   length: 0,
   password: '',
   activeGenerators: [],

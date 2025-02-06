@@ -1,7 +1,7 @@
 import { FC, PropsWithChildren, useCallback, useEffect, memo } from 'react'
 import useClipboard from '@/features/Clipboard/useClipboard.ts'
 
-interface IClipboardButtonProps {
+interface ClipboardButtonProps {
   onSuccess?: () => void
   onError?: (msg: string) => void
   text: string
@@ -9,7 +9,7 @@ interface IClipboardButtonProps {
   description?: string
   isDisabled?: boolean
 }
-const ClipboardButton = (props: IClipboardButtonProps) => {
+const ClipboardButton = (props: ClipboardButtonProps) => {
   const {
     onSuccess,
     onError,

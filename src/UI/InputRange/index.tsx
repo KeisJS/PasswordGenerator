@@ -1,7 +1,7 @@
 import { ChangeEventHandler, memo, useCallback } from 'react'
 import styles from './styles.module.css'
 
-interface IInputRangeProps {
+interface InputRangeProps {
   onChange: (value: number) => void
   label: string
   value: number
@@ -9,7 +9,7 @@ interface IInputRangeProps {
   max?: number
   isShowValue?: boolean
 }
-const InputRange = (props: IInputRangeProps) => {
+const InputRange = (props: InputRangeProps) => {
   const {
     min = 6,
     max = 30,
